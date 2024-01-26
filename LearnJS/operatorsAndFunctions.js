@@ -40,8 +40,13 @@ const user = {
     userName: 'T',
     email: 't@gmail.com',
     profession: '??',
-    [userSym]: 'Declared Symbol'
+    [userSym]: 'Declared Symbol',
+    welcomeMessage: function() {
+        console.log(`Welcome ${this.userName}!`);
+    }
 }
+
+user.welcomeMessage();
 
 
 // Example of freezing the object so changes can no longer occur to the object
@@ -61,6 +66,7 @@ console.log(user);
 user.getGreeting = function(name) {
     console.log('Hello ' + name + ` from ${this.fullName.fName} ${this.fullName.lName}`);
 }
+
 
 user.getGreeting('Mizu');
 console.log(user);
@@ -115,3 +121,15 @@ function testFunc(){
 }
 
 testFunc();
+
+
+// Nullish operator = ?? - this operator will take the first positive value if it is null or undefined
+
+let val1;
+let val2
+
+val1 = null ?? 10
+val2 = undefined ?? 10
+
+console.log(val1);
+console.log(val2);
